@@ -5,14 +5,14 @@ import os
 # Import written packages
 from src.read_load_sheet import ReadLoadSheet
 
-# Read in load sheet
-os.chdir('data')
-load_sheet = pd.read_excel('lighting.xlsx')
-print(load_sheet)
+directory = 'data\F03'
 
 # TODO single line diagrams for one lighting circuit from load sheet
-load_sheet = ReadLoadSheet(load_sheet)
-load_sheet.read_loads()
+load_sheet = ReadLoadSheet(directory)
+load_sheet.read_schedules()
+load_sheet.clean()
+
+# print(df[df.eq("CEASERS PALACE VILLA").any(1)].columns[0])
 
 
 # get criteria for single line diagrams
